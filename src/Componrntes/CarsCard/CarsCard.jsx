@@ -5,7 +5,7 @@ import { IoEye } from "react-icons/io5";
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
-const CarsCard = ({car}) => {
+const CarsCard = ({car, cars,setCars}) => {
     const {_id,carName,engineName,cubicCC,price,photo} = car;
 
     const handleDelete = _id =>{
@@ -33,6 +33,8 @@ const CarsCard = ({car}) => {
                 text: "Your car has been deleted.",
                 icon: "success"
               });
+              const remainingCars = cars.filter(car => car._id !== _id);
+              setCars(remainingCars);
                 }
             })
             }
@@ -63,6 +65,8 @@ const CarsCard = ({car}) => {
 export default CarsCard;
 
 CarsCard.propTypes ={
-    car: PropTypes.object.isRequired
+    car: PropTypes.object.isRequired,
+    cars: PropTypes.object.isRequired,
+    setCars: PropTypes.object.isRequired
 
 }
