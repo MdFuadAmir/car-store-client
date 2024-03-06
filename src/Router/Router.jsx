@@ -5,6 +5,7 @@ import Login from "../Componrntes/Login/Login";
 import Register from "../Componrntes/Register/Register";
 import AddCars from "../Componrntes/AddCars/AddCars";
 import UpdateCars from "../Componrntes/UpdateCars/UpdateCars";
+import Users from "../Componrntes/Users/Users";
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
         {
             path: '/register',
             element: <Register></Register>
+        },
+        {
+            path: '/users',
+            element: <Users></Users>,
+            loader: () => fetch('http://localhost:5000/user')
         },
         {
             path: 'addCars',
