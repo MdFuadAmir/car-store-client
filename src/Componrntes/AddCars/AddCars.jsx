@@ -14,7 +14,7 @@ const AddCars = () => {
         console.log(newCar);
 
         // Send data to the server
-        fetch('http://localhost:5000/car',{
+        fetch('https://cars-store-server-kpuhfdxox-md-fuad-amirs-projects.vercel.app/car',{
           method: 'POST',
           headers:{
             'content-type': 'application/json'

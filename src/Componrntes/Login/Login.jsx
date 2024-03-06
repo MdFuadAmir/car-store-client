@@ -20,7 +20,7 @@ const Login = () => {
         lastLoggedAt: result?.user?.metadata?.lastSignInTime
       }
       // update lastLoggedAt in the database
-      fetch('http://localhost:5000/user',{
+      fetch('https://cars-store-server-kpuhfdxox-md-fuad-amirs-projects.vercel.app/user',{
         method: "PATCH",
         headers:{
           'content-type': 'application/json'

@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>,
-            loader: () => fetch('http://localhost:5000/car')
+            loader: () => fetch('https://cars-store-server-kpuhfdxox-md-fuad-amirs-projects.vercel.app/car')
         },
         {
             path: '/login',
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         {
             path: '/users',
             element: <Users></Users>,
-            loader: () => fetch('http://localhost:5000/user')
+            loader: () => fetch('https://cars-store-server-kpuhfdxox-md-fuad-amirs-projects.vercel.app/user')
         },
         {
             path: 'addCars',
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         {
             path: 'updateCars/:id',
             element: <UpdateCars></UpdateCars>,
-            loader: ({params}) =>fetch(`http://localhost:5000/car/${params.id}`)
+            loader: ({params}) =>fetch(`https://cars-store-server-kpuhfdxox-md-fuad-amirs-projects.vercel.app/car/${params.id}`)
         }
       ]
     },

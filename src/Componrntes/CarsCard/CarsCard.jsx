@@ -1,7 +1,4 @@
 import PropTypes from 'prop-types';
-import { MdDelete } from "react-icons/md";
-import { FaPen } from "react-icons/fa6";
-import { IoEye } from "react-icons/io5";
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
@@ -21,7 +18,7 @@ const CarsCard = ({car, cars,setCars}) => {
           }).then((result) => {
             if (result.isConfirmed) {
             
-            fetch(`http://localhost:5000/car/${_id}`,{
+            fetch(`https://cars-store-server-kpuhfdxox-md-fuad-amirs-projects.vercel.app/car/${_id}`,{
                 method: "DELETE"
             })
             .then(res => res.json())
@@ -51,11 +48,11 @@ const CarsCard = ({car, cars,setCars}) => {
     <p><span className="font-bold">Price:</span> {price}</p>
     </div>
     <div className="grid space-y-1">
-        <button className="btn bg-stone-500 text-lg text-white"><IoEye></IoEye></button>
+        <button className="btn bg-stone-500 text-lg text-white">I</button>
         <Link to={`updateCars/${_id}`}>
-        <button className="btn bg-gray-600 text-lg text-white"><FaPen></FaPen></button>
+        <button className="btn bg-gray-600 text-lg text-white">R</button>
         </Link>
-        <button className="btn bg-red-500 text-lg text-white" onClick={()=> handleDelete(_id)}><MdDelete></MdDelete></button>
+        <button className="btn bg-red-500 text-lg text-white" onClick={()=> handleDelete(_id)}>X</button>
     </div>
   </div>
 </div>

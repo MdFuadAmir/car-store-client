@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { CiMenuKebab } from "react-icons/ci";
+
 import { useState } from "react";
 import Swal from "sweetalert2";
 
@@ -20,7 +20,7 @@ const Users = () => {
           }).then((result) => {
             if (result.isConfirmed) {
             
-            fetch(`http://localhost:5000/user/${_id}`,{
+            fetch(`https://cars-store-server-kpuhfdxox-md-fuad-amirs-projects.vercel.app/user/${_id}`,{
                 method: "DELETE"
             })
             .then(res => res.json())
@@ -67,7 +67,7 @@ const Users = () => {
             <td>{user?.userUid}</td>
             <td>
             <div className="dropdown dropdown-bottom dropdown-end">
-  <div tabIndex={0} role="button" className=""><CiMenuKebab className="text-xl"></CiMenuKebab></div>
+  <div tabIndex={0} role="button" className="">...</div>
   <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
     <li><button>Edit</button></li>
     <li><button onClick={() => handleDelete(user._id)}>Delete</button></li>

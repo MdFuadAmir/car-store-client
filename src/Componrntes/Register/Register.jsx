@@ -25,7 +25,7 @@ const Register = () => {
             const lastSignIn = result.user?.metadata?.lastSignInTime;
             const userUid = result.user?.uid;
             const user = {email, createdAt: creaedtAt, lastSignIn: lastSignIn, userUid: userUid};
-            fetch('http://localhost:5000/user',{
+            fetch('https://cars-store-server-kpuhfdxox-md-fuad-amirs-projects.vercel.app/user',{
                 method: "POST",
                 headers:{
                     'content-type': 'application/json'

@@ -18,7 +18,7 @@ const UpdateCars = () => {
       console.log(updatedCar);
 
       // Send data to the server
-      fetch(`http://localhost:5000/car/${_id}`,{
+      fetch(`https://cars-store-server-kpuhfdxox-md-fuad-amirs-projects.vercel.app/car/${_id}`,{
         method: 'PUT',
         headers:{
           'content-type': 'application/json'
